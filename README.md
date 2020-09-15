@@ -1,10 +1,13 @@
 Intel RealSense T265로 OpenVSLAM 돌리기
+
 필요한것 : openvslam과 librealsense 설치
 
 openvslam/example 안의
+
 CMakeLists.txt, run_camera_slam.cc, run_camera_localizatio.cc, run_image_localization.cc 수정
 
 openvslam/build 안에
+
 t265_camera/config.yaml, stereo_camera/config.yaml 추가
 
 편하게 실행하기 위해 build 안에 .sh 파일 추가
