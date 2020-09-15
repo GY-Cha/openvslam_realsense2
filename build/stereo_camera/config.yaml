@@ -1,0 +1,69 @@
+# EuRoC stereo model
+
+#==============#
+# Camera Model #
+#==============#
+
+# intrinsic parameters after stereo-rectification are written
+
+Camera.name: "T265 stereo"
+Camera.setup: "stereo"
+Camera.model: "perspective"
+
+# new "rectified" matrices is the first three cols of the projection matrix which is calculated with cv::stereoRectify()
+# e.g. fx = P1[0][0] or P2[0][0], cx = P1[0][2] or P2[0][2]
+#      fy = P1[1][1] or P2[1][1], cy = P1[1][2] or P2[1][2]
+
+Camera.fx: 286.85580444
+Camera.fy: 286.94439697
+Camera.cx: 411.69299316
+Camera.cy: 404.53860474
+
+# there is no distortion after stereo rectification
+
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+Camera.k3: 0.0
+
+# focal_x_baseline is -P2[0][3] which is calculated with cv::stereoRectify()
+
+Camera.fps: 10.0
+Camera.cols: 848
+Camera.rows: 800
+Camera.focal_x_baseline: 9.63939651847
+
+Camera.color_order: "Gray"
+
+#======================#
+# Stereo Rectification #
+#======================#
+
+# original intrinsic parameters (K, D) and stereo-recitification parameters (R)
+# matrices (K, R) are written in row-major order
+
+StereoRectifier.model: "fisheye"
+StereoRectifier.K_left: [286.85580444, 0.0, 411.69299316, 0.0, 286.94439697, 404.53860474, 0.0, 0.0, 1.0]
+StereoRectifier.D_left: [-0.00902565, 0.04527542, -0.04306191, 0.00809931]
+StereoRectifier.R_left: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+StereoRectifier.K_right: [287.16650391, 0.0, 413.60620117, 0.0, 287.25201416, 399.12039185, 0.0, 0.0, 1.0]
+StereoRectifier.D_right: [-0.00920116, 0.04650973, -0.04463322, 0.00874527]
+StereoRectifier.R_right: [0.99998099, 0.00133251, -0.00601044, -0.00134251, 0.99999774, -0.00165981, 0.00600821, 0.00166785, 0.99998057]
+
+#================#
+# ORB Parameters #
+#================#
+
+Feature.max_num_keypoints: 1000
+Feature.scale_factor: 1.2
+Feature.num_levels: 8
+Feature.ini_fast_threshold: 20
+Feature.min_fast_threshold: 7
+
+#========================#
+# Initializer Parameters #
+#========================#
+
+Initializer.num_min_triangulated_pts: 100
+
