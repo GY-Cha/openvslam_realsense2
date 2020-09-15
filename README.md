@@ -4,7 +4,7 @@ Intel RealSense T265로 OpenVSLAM 돌리기
 
 openvslam/example 안의
 
-CMakeLists.txt, run_camera_slam.cc, run_camera_localizatio.cc, run_image_localization.cc 수정
+CMakeLists.txt, run_camera_slam.cc, run_camera_localization.cc, run_image_localization.cc 수정
 
 openvslam/build 안에
 
