@@ -1,16 +1,24 @@
-Intel RealSense T265로 OpenVSLAM 돌리기
+- Intel RealSense T265로 OpenVSLAM 돌리기 -
 
-필요한것 : openvslam과 librealsense 설치
+t265에 있는 fisheye 카메라로 openvslam을 돌리기 위해 일부 파일을 수정하였다.
 
-openvslam/example 안의
+fisheye 카메라 하나만 써서 mono slam & localization을 하거나 두개 다 써서 stereo slam & localization을 할 수 있다.
 
-CMakeLists.txt, run_camera_slam.cc, run_camera_localization.cc, run_image_localization.cc 수정
+mono slam을 할 경우 scaling을 맞춰야 하지만 stereo slam을 하면 실제 크기와 맞게 point cloud가 형성된다.
 
-openvslam/build 안에
+- 필요한것 : openvslam과 librealsense 설치
 
-t265_camera/config.yaml, stereo_camera/config.yaml 추가
+- 수정한것:
 
-편하게 실행하기 위해 build 안에 .sh 파일 추가
+openvslam/example/ 안의 CMakeLists.txt, run_camera_slam.cc, run_camera_localization.cc, run_image_localization.cc 수정
+
+openvslam/build/ 안에 t265_camera/config.yaml, stereo_camera/config.yaml 추가
+
+(t265의 camera parameter는 librealsense/wrappers/python/examples/에 있는 t265_stereo.py를 이용하여 얻을 수 있다.)
+
+편하게 실행하기 위해 build 폴더 안에 .sh 파일 추가
+
+
 
 
 <p align="center">
