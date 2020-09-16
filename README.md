@@ -1,4 +1,4 @@
-- Intel RealSense T265로 OpenVSLAM 돌리기 -
+- Intel RealSense T265로 OpenVSLAM 돌리기
 
 t265에 있는 fisheye 카메라로 openvslam을 돌리기 위해 일부 파일을 수정하였다.
 
